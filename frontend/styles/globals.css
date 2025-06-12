@@ -1,0 +1,44 @@
+body {
+  background-color: #110022;
+  color: #00ffcc;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  padding: 2rem;
+}
+
+h1 {
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px #ff00aa;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+textarea,
+input[type="password"] {
+  background-color: #280b52;
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+  padding: 0.5rem;
+}
+
+button {
+  background-color: #ff00aa;
+  color: #ffffff;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 6px #ff00aa;
+}
+
+h2 {
+  color: #ffcc00;
+}
