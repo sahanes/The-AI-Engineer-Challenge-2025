@@ -7,6 +7,7 @@ This is a FastAPI-based backend service that provides a streaming chat interface
 - Python 3.8 or higher
 - pip (Python package manager)
 - An OpenAI API key
+  - Set `OPENAI_API_KEY` in your environment before starting the server
 
 ## Setup
 
@@ -45,8 +46,7 @@ The server will start on `http://localhost:8000`
 {
     "developer_message": "string",
     "user_message": "string",
-    "model": "gpt-4.1-mini",  // optional
-    "api_key": "your-openai-api-key"
+    "model": "gpt-4.1-mini"  // optional
 }
 ```
 - **Response**: Streaming text response
