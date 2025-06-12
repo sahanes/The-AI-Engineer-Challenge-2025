@@ -3,8 +3,8 @@ import { useState } from 'react';
 export default function Home() {
   const [developerMessage, setDeveloperMessage] = useState('');
   const [userMessage, setUserMessage] = useState('');
+  const [apiKey, setApiKey] = useState(''); // Add this line
   const [response, setResponse] = useState('');
-  const [apiKey, setApiKey] = useState('');
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -12,7 +12,7 @@ export default function Home() {
     const res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ developer_message: developerMessage, user_message: userMessage, api_key: apiKey })
+      body: JSON.stringify({ developer_message: developerMessage, user_message: userMessage })
     });
     if (!res.body) return;
     const reader = res.body.getReader();
@@ -52,9 +52,9 @@ export default function Home() {
         <button type="submit">Send</button>
       </form>
       {response && (
-        <div style={{ marginTop: '1rem', whiteSpace: 'pre-wrap' }}>
-          <h2>Response</h2>
-          <p>{response}</p>
+        <div className="response">
+          <h2>Response:</h2>
+          <pre>{response}</pre>
         </div>
       )}
     </div>
